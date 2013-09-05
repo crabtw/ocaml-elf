@@ -1,0 +1,6 @@
+version = "0.0.1"
+description = "ELF parser"
+requires = "bitstring"
+archive(byte) = "elf.cma"
+archive(native) = "elf.cmxa"
+exists_if = "elf.cma"
