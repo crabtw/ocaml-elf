@@ -38,12 +38,11 @@ type e_machine =
   | EM_386
   | EM_68K
   | EM_88K
-  | EM_486
   | EM_860
   | EM_MIPS
   | EM_S370
   | EM_MIPS_RS3_LE
-  | EM_SPARC64
+
   | EM_PARISC
   | EM_VPP500
   | EM_SPARC32PLUS
@@ -51,7 +50,7 @@ type e_machine =
   | EM_PPC
   | EM_PPC64
   | EM_S390
-  | EM_SPU
+
   | EM_V800
   | EM_FR20
   | EM_RH32
@@ -80,6 +79,7 @@ type e_machine =
   | EM_TINYJ
   | EM_X86_64
   | EM_PDSP
+
   | EM_FX66
   | EM_ST9PLUS
   | EM_ST7
@@ -109,22 +109,10 @@ type e_machine =
   | EM_OPENRISC
   | EM_ARC_A5
   | EM_XTENSA
-  | EM_VIDEOCORE
-  | EM_TMM_GPP
-  | EM_NS32K
-  | EM_TPC
-  | EM_SNP1K
-  | EM_ST200
-  | EM_IP2K
-  | EM_MAX
-  | EM_CR
-  | EM_F2MC16
-  | EM_MSP430
-  | EM_BLACKFIN
-  | EM_SE_C33
-  | EM_SEP
-  | EM_ARCA
-  | EM_UNICORE
+  | EM_AARCH64
+  | EM_TILEPRO
+  | EM_MICROBLAZE
+  | EM_TILEGX
   | EM_EXT of int
 
 type p_type =
@@ -258,12 +246,11 @@ let get_e_machine mach =
   | 3 -> EM_386
   | 4 -> EM_68K
   | 5 -> EM_88K
-  | 6 -> EM_486
   | 7 -> EM_860
   | 8 -> EM_MIPS
   | 9 -> EM_S370
   | 10 -> EM_MIPS_RS3_LE
-  | 11 -> EM_SPARC64
+
   | 15 -> EM_PARISC
   | 17 -> EM_VPP500
   | 18 -> EM_SPARC32PLUS
@@ -271,7 +258,7 @@ let get_e_machine mach =
   | 20 -> EM_PPC
   | 21 -> EM_PPC64
   | 22 -> EM_S390
-  | 23 -> EM_SPU
+
   | 36 -> EM_V800
   | 37 -> EM_FR20
   | 38 -> EM_RH32
@@ -300,6 +287,7 @@ let get_e_machine mach =
   | 61 -> EM_TINYJ
   | 62 -> EM_X86_64
   | 63 -> EM_PDSP
+
   | 66 -> EM_FX66
   | 67 -> EM_ST9PLUS
   | 68 -> EM_ST7
@@ -329,22 +317,10 @@ let get_e_machine mach =
   | 92 -> EM_OPENRISC
   | 93 -> EM_ARC_A5
   | 94 -> EM_XTENSA
-  | 95 -> EM_VIDEOCORE
-  | 96 -> EM_TMM_GPP
-  | 97 -> EM_NS32K
-  | 98 -> EM_TPC
-  | 99 -> EM_SNP1K
-  | 100 -> EM_ST200
-  | 101 -> EM_IP2K
-  | 102 -> EM_MAX
-  | 103 -> EM_CR
-  | 104 -> EM_F2MC16
-  | 105 -> EM_MSP430
-  | 106 -> EM_BLACKFIN
-  | 107 -> EM_SE_C33
-  | 108 -> EM_SEP
-  | 109 -> EM_ARCA
-  | 110 -> EM_UNICORE
+  | 183 -> EM_AARCH64
+  | 188 -> EM_TILEPRO
+  | 189 -> EM_MICROBLAZE
+  | 191 -> EM_TILEGX
   | _ -> EM_EXT mach
 
 let get_p_type ty =

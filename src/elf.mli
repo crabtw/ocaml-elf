@@ -38,12 +38,11 @@ type e_machine =
   | EM_386
   | EM_68K
   | EM_88K
-  | EM_486
   | EM_860
   | EM_MIPS
   | EM_S370
   | EM_MIPS_RS3_LE
-  | EM_SPARC64
+
   | EM_PARISC
   | EM_VPP500
   | EM_SPARC32PLUS
@@ -51,7 +50,7 @@ type e_machine =
   | EM_PPC
   | EM_PPC64
   | EM_S390
-  | EM_SPU
+
   | EM_V800
   | EM_FR20
   | EM_RH32
@@ -80,6 +79,7 @@ type e_machine =
   | EM_TINYJ
   | EM_X86_64
   | EM_PDSP
+
   | EM_FX66
   | EM_ST9PLUS
   | EM_ST7
@@ -109,22 +109,10 @@ type e_machine =
   | EM_OPENRISC
   | EM_ARC_A5
   | EM_XTENSA
-  | EM_VIDEOCORE
-  | EM_TMM_GPP
-  | EM_NS32K
-  | EM_TPC
-  | EM_SNP1K
-  | EM_ST200
-  | EM_IP2K
-  | EM_MAX
-  | EM_CR
-  | EM_F2MC16
-  | EM_MSP430
-  | EM_BLACKFIN
-  | EM_SE_C33
-  | EM_SEP
-  | EM_ARCA
-  | EM_UNICORE
+  | EM_AARCH64
+  | EM_TILEPRO
+  | EM_MICROBLAZE
+  | EM_TILEGX
   | EM_EXT of int
 
 type p_type =
