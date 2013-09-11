@@ -567,9 +567,12 @@ let get_section ei_class endian elf_bit sh_str bit =
         sh_addralign = Int64.of_int32 sh_addralign;
         sh_entsize = Int64.of_int32 sh_entsize;
         sh_data =
-          bitmatch elf_bit with
-          | { data : (Int32.to_int sh_size * 8) : string, offset (Int32.to_int sh_offset * 8) } -> data
-          | { _ } -> ""
+          if get_sh_type sh_type = SHT_NOBITS then
+            String.create (Int32.to_int sh_size)
+          else
+            bitmatch elf_bit with
+            | { data : (Int32.to_int sh_size * 8) : string, offset (Int32.to_int sh_offset * 8) } -> data
+            | { _ } -> ""
       }
     )
   | ELFCLASS64 ->
@@ -595,9 +598,12 @@ let get_section ei_class endian elf_bit sh_str bit =
         sh_addralign = sh_addralign;
         sh_entsize = sh_entsize;
         sh_data =
-          bitmatch elf_bit with
-          | { data : (Int64.to_int sh_size * 8) : string, offset (Int64.to_int sh_offset * 8) } -> data;
-          | { _ } -> ""
+          if get_sh_type sh_type = SHT_NOBITS then
+            String.create (Int64.to_int sh_size)
+          else
+            bitmatch elf_bit with
+            | { data : (Int64.to_int sh_size * 8) : string, offset (Int64.to_int sh_offset * 8) } -> data;
+            | { _ } -> ""
       }
 
 (* main parser *)
