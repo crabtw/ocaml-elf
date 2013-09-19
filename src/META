@@ -1,6 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: c6343ce2dca5a3d1ccfc2ae0466432bb)
 version = "0.0.1"
 description = "ELF parser"
 requires = "bitstring"
 archive(byte) = "elf.cma"
+archive(byte, plugin) = "elf.cma"
 archive(native) = "elf.cmxa"
+archive(native, plugin) = "elf.cmxs"
 exists_if = "elf.cma"
+# OASIS_STOP
+
