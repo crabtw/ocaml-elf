@@ -17,7 +17,6 @@
 "src/elf.cmxs": use_elf
 <src/*.ml{,i}>: pkg_bitstring
 <src/*.ml{,i}>: pkg_bitstring.syntax
-<src/*.ml>: syntax_camlp4o
 # Executable test_parser
 <test/test_parser.{native,byte}>: use_elf
 <test/test_parser.{native,byte}>: pkg_bitstring
@@ -26,3 +25,4 @@
 <test/*.ml{,i}>: pkg_bitstring
 <test/*.ml{,i}>: pkg_bitstring.syntax
 # OASIS_STOP
+<src/elf.ml>: syntax_camlp4o
